@@ -1,0 +1,7 @@
+alter session set "_ORACLE_SCRIPT"=true;
+
+CREATE USER dev IDENTIFIED BY develop;
+GRANT CONNECT, RESOURCE TO dev;
+ALTER USER dev QUOTA UNLIMITED ON USERS;
+
+exit;
