@@ -4,22 +4,11 @@ services:
     container_name: mssql
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
-      SA_PASSWORD: "Admin@123"
+      SA_PASSWORD: "Credz@Cwi"
       ACCEPT_EULA: "Y"
       MSSQL_PID: "Developer"
     ports:
       - "1433:1433"
-    network_mode: bridge
-
-  rabbitmq:
-    container_name: rabbitmq
-    image: rabbitmq:3-management
-    environment:
-      RABBITMQ_DEFAULT_USER: admin
-      RABBITMQ_DEFAULT_PASS: admin
-    ports:
-      - 5672:5672
-      - 15672:15672
     network_mode: bridge
 
   localstack:

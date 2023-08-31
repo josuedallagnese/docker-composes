@@ -4,9 +4,9 @@ services:
   mysql:
     image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "Development@"
+      MYSQL_ROOT_PASSWORD: "Admin@123"
     ports:
       - "3306:3306"
     volumes:
-      - C:\Users\josue.dallagnese\OneDrive\Docker\volumes\mysql:/var/lib/mysql
+      - mysql:/var/lib/mysql
     network_mode: bridge
