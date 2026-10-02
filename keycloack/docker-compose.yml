@@ -1,0 +1,26 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak-local
+    ports:
+      - "8080:8080"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+
+      # Banco embutido para testes locais
+      KC_DB: dev-file
+
+      # Melhor compatibilidade local
+      KC_HTTP_ENABLED: "true"
+
+      # Logs
+      KC_LOG_LEVEL: INFO
+    command:
+      - start-dev
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+    restart: unless-stopped
+
+volumes:
+  keycloak_data:
